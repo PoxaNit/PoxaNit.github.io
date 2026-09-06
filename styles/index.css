@@ -1,0 +1,218 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    --bg-primary: #0f172a;       /* Azul escuro profundo */
+    --bg-secondary: #1e293b;     /* Azul escuro para cartões/seções */
+    --accent-color: #38bdf8;     /* Ciano para links e destaques */
+    --text-main: #f8fafc;        /* Branco suave para textos principais */
+    --text-muted: #94a3b8;       /* Cinza para textos secundários */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --max-width: 900px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Requisito: Rolagem suave entre seções */
+    font-family: var(--font-family);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 60px 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #334155;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   2. SEÇÃO DE PERFIL (#profile)
+   ========================================================================== */
+#profile {
+    text-align: center;
+    padding-top: 80px;
+}
+
+#profile img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+}
+
+#profile h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+
+#profile h2 {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   3. SEÇÃO DE SKILLS (#skills)
+   ========================================================================== */
+/* Nota: Corrigindo estilização para a tag customizada <list> ou <ul> */
+#skills list, #skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+}
+
+#skills li {
+    background-color: var(--bg-secondary);
+    color: var(--text-main);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    border: 1px solid #334155;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+#skills li:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+}
+
+/* ==========================================================================
+   4. SEÇÃO DE PROJETOS (#projects)
+   ========================================================================== */
+#projects {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#projects div {
+    background-color: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    transition: box-shadow 0.3s ease;
+}
+
+#projects div:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+#projects h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+#projects p {
+    margin-bottom: 15px;
+}
+
+#projects a, #contacts a {
+    display: inline-block;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease;
+}
+
+#projects a:hover, #contacts a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   5. SEÇÃO DE CONTATOS (#contacts)
+   ========================================================================== */
+#contacts h4 {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    color: var(--text-main);
+}
+
+#contacts p {
+    margin-bottom: 10px;
+}
+
+#contacts a {
+    margin-right: 20px;
+    margin-top: 10px;
+    background-color: #334155;
+    color: var(--text-main);
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+#contacts a:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   6. RESPONSIVIDADE (MOBILE FIRST / ADAPTAÇÕES)
+   ========================================================================== */
+@media (max-width: 600px) {
+    section {
+        padding: 40px 10px;
+    }
+
+    #profile h1 {
+        font-size: 2rem;
+    }
+
+    #profile img {
+        width: 140px;
+        height: 140px;
+    }
+
+    #skills list, #skills ul {
+        justify-content: center;
+    }
+
+    #contacts a {
+        display: block;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
